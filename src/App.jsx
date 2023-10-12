@@ -33,7 +33,7 @@ function App() {
           console.log(imageurl)
           const { title, shortDescription } = data;
           const blogData = { title, shortDescription, img: imageurl }
-          fetch('http://localhost:3000/blog', {
+          fetch('https://blog-eunr.onrender.com/blog', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'
@@ -59,7 +59,7 @@ function App() {
     <>
       <div>
 
-        <div className="w-[90%] relative bottom-16 mt-28 bg-slate-600 mx-auto bg-white  px-12 py-10 shadow-xl rounded-md">
+        <div className="w-[90%] relative bottom-16 mt-28 bg-slate-600 mx-auto   px-12 py-10 shadow-xl rounded-md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <h1 className=" font-semibold text-white">Blog Title</h1>
