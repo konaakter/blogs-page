@@ -19,7 +19,24 @@ router.post('/', async (req, res) => {
             error: "There was a server side error!",
         });
     }
-   
+
+});
+
+router.get("/", async (req, res) => {
+
+    try {
+        const data = await blog.find({});
+        res.status(200).json({
+            result: data,
+            message: "Success",
+        });
+    } catch (err) {
+        res.status(500).json({
+            error: "There was a server side error!",
+        });
+    }
+    
+
 });
 
 
