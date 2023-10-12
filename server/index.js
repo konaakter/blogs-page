@@ -5,13 +5,21 @@ const cors = require('cors')
 app.use(express.json());
 app.use(cors())
 
+
+const dbConect = require ("./utils/dbConect.js");
+const blogRoute = require ("./router/blog.router.js");
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+
+dbConect();
+app.use("/blog", blogRoute)
+/*const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://blog:1243erfdfgr5@cluster0.ah3a7qz.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -31,9 +39,9 @@ async function run() {
         //await client.db("admin").command({ ping: 1 });
        // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
-        const blogcalection = client.db("blogbd").collection("blog");
+       // const blogcalection = client.db("blogbd").collection("blog");
 
-        app.post('/blog', async (req, res) => {
+        /*app.post('/blog', async (req, res) => {
             const addblog = req.body;
             console.log(addblog);
             const addblogresult = await blogcalection.insertOne(addblog);
@@ -53,7 +61,7 @@ async function run() {
        // await client.close();
     }
 }
-run().catch(console.dir);
+run().catch(console.dir);*/
 
 
 app.listen(port, () => {
