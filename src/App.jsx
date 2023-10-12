@@ -51,22 +51,18 @@ function App() {
 
       })
 
-    
+
   };
 
 
   return (
     <>
       <div>
-        <div className="bg-slate-700 px-16 pt-5 pb-20">
-          <h1 className="text-3xl font-semibold text-white py-2">
-            Add a new blog
-          </h1>
-        </div>
-        <div className="w-[90%] relative bottom-16 mx-auto bg-white  px-12 py-10 shadow-xl rounded-md">
+
+        <div className="w-[90%] relative bottom-16 mt-28 bg-slate-600 mx-auto bg-white  px-12 py-10 shadow-xl rounded-md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <h1 className=" font-semibold text-slate-700">Blog Title</h1>
+              <h1 className=" font-semibold text-white">Blog Title</h1>
               <input
                 className="w-full px-8 py-3 mt-2 rounded-lg font-medium  border  drop-shadow-md text-sm focus:outline-none focus:border border-gray-300"
                 type="text"
@@ -78,23 +74,10 @@ function App() {
               )}
             </div>
 
-            <div>
-              <h1 className=" font-semibold text-slate-700">Author Name</h1>
-              <input
-                className="w-full px-8 py-3 mt-2 rounded-lg font-medium  border  drop-shadow-md text-sm focus:outline-none focus:border border-gray-300"
-                type="text"
-                {...register("authorName", {
-                  required: "Author name is required",
-                })}
-                placeholder="Please enter author name"
-              />
-              {errors.authorName && (
-                <p className="text-red-500 mt-3">{errors.authorName.message}</p>
-              )}
-            </div>
+
             <div className="mt-5">
-              <h1 className=" font-semibold text-slate-700">
-                Short Description for blog{" "}
+              <h1 className=" font-semibold text-white">
+                Short Description for blog
               </h1>
               <textarea
                 rows="4"

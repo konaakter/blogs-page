@@ -1,7 +1,7 @@
 const  { default: mongoose }  = require('mongoose');
-
+require("dotenv").config();
 function dbConect(){
-    mongoose.connect('mongodb+srv://blog:1243erfdfgr5@cluster0.ah3a7qz.mongodb.net/?retryWrites=true&w=majority'
+    mongoose.connect(process.env.MONGODB_CONECTION
     , {
      useNewUrlParser: true,
      useUnifiedTopology: true,
